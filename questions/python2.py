@@ -133,9 +133,13 @@ def four(string1, string2):
     # There is a module which can be used to generate random numbers, this module is called random.
     # The random module contains a function called randint.
 
-
+from random import randint
 def five():
-    return []
+    rand_list = []
+    for x in range(5):
+        rand = randint(100, 200)
+        rand_list.append(rand)
+    return rand_list
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -217,9 +221,20 @@ def seven(a, b, c):
 
 def eight(string,  a):
     length = len(string)
-    middle = (length / 2) +1
+    middle = (int(length / 2)) +1
     range_both = int(a/2)
-    return new_string
+    new_string = ''
+    lower = middle - range_both -1
+    upper = middle + range_both 
+    if a == length:
+        return new_string
+    else:
+        for char in string[0:lower]:
+            new_string += char
+        for char in string[upper:]:
+            new_string += char
+        return new_string
+
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
     # <QUESTION 9>
@@ -238,8 +253,23 @@ def eight(string,  a):
 
 
 def nine(string1, string2):
-    return False
+    if len(string1) < len(string2):
+        test = string1
+        check = string2
+    else:
+        test = string2
+        check = string1
+    letters = 0 
+    for char1 in check:
+        for char2 in test:
+            if char1 == char2:
+                letters += 1
+    if letters >= len(test):
+        return True
+    else:
+        return False
 
+print(nine("cat", "dog"))
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
     # <QUESTION 10>
