@@ -115,7 +115,13 @@ def three(a):
 
 
 def four(string1, string2):
-    return ""
+    position = 0
+    new_string = ''
+    for char in string1:
+        new_string += char
+        new_string += string2[position]
+        position += 1
+    return new_string
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -138,9 +144,14 @@ def five():
     rand_list = []
     for x in range(5):
         rand = randint(100, 200)
-        rand_list.append(rand)
+        if rand % 2 == 0:
+            rand_list.append(rand)
+        else:
+            rand +=1
+            rand_list.append(rand)
     return rand_list
 
+print(five())
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
     # <QUESTION 6>
@@ -269,7 +280,7 @@ def nine(string1, string2):
     else:
         return False
 
-print(nine("cat", "dog"))
+
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
     # <QUESTION 10>
