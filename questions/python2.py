@@ -31,7 +31,11 @@
 # How does a for loop iterate through a string?
 
 def one(string):
-    return ""
+    res = ''
+    for char in string:
+        sent = char + char +char
+        res += sent
+    return res
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -52,7 +56,10 @@ def one(string):
 
 
 def two(number):
-    return False
+    for n in range(2, number):
+        if number % n == 0:
+            return False
+    return True
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -72,7 +79,11 @@ def two(number):
 
 
 def three(a):
-    return 1
+    string_a = str(a)
+    aa = int(string_a + string_a)
+    aaa = int(string_a + string_a + string_a)
+    aaaa = int(string_a + string_a + string_a + string_a)
+    return a + aa + aaa + aaaa
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -146,6 +157,11 @@ def five():
 
 
 def six(string):
+    check = 0
+    string_lower = string.lower()
+    if string_lower[-1] == 'y':
+        if string_lower [-2] == 'p':
+            return True
     return False
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -173,6 +189,12 @@ def six(string):
 
 
 def seven(a, b, c):
+    lis = [a, b, c]
+    new_lis = sorted(lis)
+    a = new_lis[1] - new_lis[0]
+    b = new_lis[2] - new_lis[1]
+    if a == b:
+        return True
     return False
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -194,8 +216,10 @@ def seven(a, b, c):
 
 
 def eight(string,  a):
-    return ""
-
+    length = len(string)
+    middle = (length / 2) +1
+    range_both = int(a/2)
+    return new_string
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
     # <QUESTION 9>
@@ -235,6 +259,11 @@ def nine(string1, string2):
 
 
 def ten(x, y):
-    return []
-
+    array = []
+    for a in range (y):
+        array_list = []
+        for b in range (x):
+            array_list.append(b*a)
+        array.append(array_list)
+    return array
 # -------------------------------------------------------------------------------------------------------------------------------------------------
